@@ -15,7 +15,7 @@ It features simple, mobile-friendly games designed to demonstrate core logic, ra
 ## 🚀 How to Run:
 
 - Download or clone this repository
-- git clone https://github.com/your-username/minilogicplay.git
+- git clone https://github.com/divyanshu-iitd/minilogicplay.git
 - cd minilogicplay
 - Run on your system
 - Simply open the index.html file in any modern browser (Chrome, Firefox, Edge, etc.).
