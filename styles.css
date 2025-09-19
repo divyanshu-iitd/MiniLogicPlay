@@ -1,0 +1,146 @@
+/* Mobile-first responsive styles for MiniLogicPlay */
+
+/* Reset */
+* { box-sizing: border-box; }
+html,body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color:#222;
+}
+.container { padding: 0.8rem; max-width:1000px; margin:0 auto; }
+
+/* Header */
+.site-header { background:#333; color:#fff; }
+.header-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0.6rem 0.8rem;
+}
+.logo { margin:0; font-size:1rem; }
+
+/* Buttons */
+.btn {
+  background:#f9f9f9;
+  border:1px solid #ddd;
+  padding:0.4rem 0.7rem;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:0.95rem;
+}
+.btn:hover { background:#eee; }
+.btn.small { padding:0.25rem 0.4rem; font-size:0.85rem; }
+.btn-ghost { background:transparent; border:1px solid #fff; color:#fff; }
+
+/* Layout */
+.main-grid {
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:0.8rem;
+  padding:0.8rem 0;
+}
+.sidebar {
+  background:#fff;
+  border:1px solid #ddd;
+  padding:0.8rem;
+}
+.content {
+  background:#fff;
+  border:1px solid #ddd;
+  padding:0.8rem;
+  min-height:55vh;
+}
+
+/* Lists */
+.list {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:row;
+  gap:0.4rem;
+  overflow:auto;
+}
+.list li {
+  padding:0.5rem;
+  border-radius:6px;
+  cursor:pointer;
+  background:#f3f3f3;
+  white-space:nowrap;
+}
+.list li.active { background:#ddd; font-weight:bold; }
+
+/* Sections */
+.games-list h3, .about h3 { margin:0 0 0.4rem 0; font-size:0.9rem; }
+.auth-box h2 { margin:0 0 0.2rem 0; font-size:0.95rem; }
+.auth-actions { display:flex; gap:0.4rem; margin-top:0.5rem; }
+
+/* Modal */
+.modal {
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,0.4);
+  padding:1rem;
+}
+.modal.hidden { display:none; }
+.modal-panel {
+  background:#fff;
+  border:1px solid #ccc;
+  border-radius:8px;
+  padding:0.8rem;
+  width:100%;
+  max-width:340px;
+  position:relative;
+}
+.modal-close {
+  position:absolute;
+  right:8px;
+  top:8px;
+  background:transparent;
+  border:0;
+  font-size:1rem;
+}
+
+/* Forms */
+label { display:block; margin-bottom:0.4rem; font-size:0.85rem; }
+input[type="text"], input[type="password"] {
+  width:100%;
+  padding:0.5rem;
+  border-radius:6px;
+  border:1px solid #ccc;
+  margin-top:0.2rem;
+}
+
+/* Footer */
+.site-footer { padding:0.8rem 0; text-align:center; font-size:0.8rem; color:#666; }
+
+/* Game specific */
+.game-controls { display:flex; gap:0.4rem; margin-bottom:0.4rem; flex-wrap:wrap; }
+.board { display:grid; gap:6px; justify-content:center; }
+.memory-card {
+  width:56px; height:56px;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#eee;
+  font-weight:700;
+  cursor:pointer;
+  user-select:none;
+}
+@media (min-width:720px){
+  .main-grid { grid-template-columns: 280px 1fr; }
+  .list { flex-direction:column; }
+  .sidebar { position:sticky; top:16px; height:calc(100vh - 70px); overflow:auto; }
+  .board.memory { grid-template-columns: repeat(4,56px); }
+}
+@media (max-width:719px){
+  .board.memory { grid-template-columns: repeat(4,1fr); grid-auto-rows:56px; }
+}
+.small { font-size:0.8rem; }
+.muted { color:#777; font-size:0.8rem; }

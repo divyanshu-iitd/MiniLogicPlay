@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MiniLogicPlay — Interactive Logic Game Suite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">MiniLogicPlay</h1>
+      <nav class="top-nav">
+        <button id="btn-profile" class="btn small">Profile</button>
+        <button id="btn-logout" class="btn small hidden">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-grid" id="main">
+    <aside class="sidebar" id="sidebar">
+      <section class="auth-box" id="auth-box">
+        <h2>Welcome</h2>
+        <p id="welcome-msg">Play logic games & sharpen your mind.</p>
+        <div class="auth-actions">
+          <button id="btn-login" class="btn">Login / Demo</button>
+          <button id="btn-signup" class="btn btn-ghost">Create Account</button>
+        </div>
+      </section>
+
+      <section class="games-list" aria-label="Games menu">
+        <h3>Games</h3>
+        <ul id="game-list" class="list">
+          <!-- JS fills this -->
+        </ul>
+      </section>
+
+      <section class="about">
+        <h3>About</h3>
+        <p>Mobile-first logic games built with HTML/CSS/JS. Modular and deploy-ready.</p>
+      </section>
+    </aside>
+
+    <section class="content" id="content" tabindex="0">
+      <!-- Active game renders here -->
+      <div id="home" class="pane">
+        <h2>MiniLogicPlay</h2>
+        <p>Choose a game from the left to get started — or log in to save progress.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Simple modal for login/signup -->
+  <div id="auth-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-panel">
+      <button class="modal-close btn small" id="auth-close" aria-label="Close">✕</button>
+      <h2 id="modal-title">Sign In</h2>
+
+      <form id="auth-form">
+        <label>
+          Username
+          <input type="text" id="auth-username" required />
+        </label>
+        <label>
+          Password
+          <input type="password" id="auth-password" required />
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn">Sign In</button>
+          <button type="button" id="auth-demo" class="btn btn-ghost">Use Demo Account</button>
+        </div>
+      </form>
+
+      <p class="small muted">This is frontend-only auth using <code>localStorage</code> (demo purposes).</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>MiniLogicPlay • Built with ❤️ • Mobile-first • LocalStorage demo auth</small>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
